@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AR/VR Cinema Watch</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <!-- Cinema Screen -->
+        <a-box position="0 2 -5" width="6" height="4" depth="0.1" color="#000">
+            <a-animation attribute="rotation" to="0 360 0" dur="10000" easing="linear" repeat="indefinite"></a-animation>
+        </a-box>
+
+        <!-- Cinema Seats -->
+        <a-box position="-1 0.5 -3" color="#4CC3D9" depth="1" height="1" width="1"></a-box>
+        <a-box position="1 0.5 -3" color="#4CC3D9" depth="1" height="1" width="1"></a-box>
+
+        <!-- Camera -->
+        <a-entity camera position="0 1.6 0">
+            <a-entity cursor="fuse: true; fuseTimeout: 500"
+                      position="0 0 -1"
+                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                      material="color: black; shader: flat">
+            </a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
